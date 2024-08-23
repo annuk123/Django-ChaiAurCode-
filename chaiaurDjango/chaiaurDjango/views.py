@@ -7,11 +7,13 @@ def Home(request):
 
 
     # return render(request, 'index.html')
-    return render(request, 'website/index.html')
+    return render(request, 'home/index.html')
 
 def about(request):
-    return HttpResponse("Hello, world. You're at the about page.")
+    # return HttpResponse("Hello, world. You're at the about page.")
+    return render(request, 'about/index.html')
 
 def contact(request):
-    return HttpResponse("Hello, world. You're at the contact page.")
+    # return HttpResponse("Hello, world. You're at the contact page.")
+    return render(request, 'contact/index.html')
 
