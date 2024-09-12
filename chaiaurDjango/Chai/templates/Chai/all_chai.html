@@ -1,11 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chai</title>
-</head>
-<body>
-    <h1>All Types of available chai</h1>
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}
+  All Types of Chai
+{% endblock %}
+
+{% block content %}
+
+  <h1>All Types of Available Chai</h1>
+  <p>Here are all the chai we have:</p>
+  <ol style="list-style-type: none; padding-left: 0;">
+    {% for chai in all_chai %}
+      <li style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+        <img src="{{ chai.image }}" alt="{{ chai.name }}" width="120" height="150" style="margin-right: 20px;">
+        <div>
+          <strong>{{ chai.name }}</strong> - {{ chai.price }}<br>
+          <p>{{ chai.description }}</p>
+        </div>
+      </li>
+    {% endfor %}
+  </ol>
+
+{% endblock %}
